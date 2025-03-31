@@ -1,0 +1,94 @@
+.background-container {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+
+  /* Black background with slight transparency for texture visibility */
+  background: linear-gradient(to top, #8f82a3, #391378);
+}
+
+/* Moving Image Texture */
+.background-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/pattern-2.svg");
+  background-size: cover;
+  background-repeat: round;
+  opacity: 0.3; /* Adjust to make texture more/less visible */
+
+  /* Animation for moving effect */
+  animation: moveTexture 4s linear infinite;
+}
+
+/* Keyframe animation to move texture from top to bottom */
+@keyframes moveTexture {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.custom-btn {
+    background-color: white; 
+    color: black;            
+    border: none;  
+    border-radius: 50px;      
+    padding: 10px 20px;       
+    font-weight: bold;        
+    cursor: pointer;          
+    transition: all 0.3s ease-in-out; 
+  }
+.browse {
+    background-color: #2991ff; 
+    color: white;        
+    font-weight: 500;    
+    border: none;  
+    border-radius: 50px;      
+    padding: 10px 20px;       
+    font-weight: bold;        
+    cursor: pointer;          
+    transition: all 0.3s ease-in-out; 
+  }
+  .custom-btn:hover {
+    transform: scale(1.1)
+    
+  }
+
+/* Centered text */
+.text {
+  position: relative;
+  margin: 0;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  z-index: 1; /* Ensures text appears above the texture */
+}
+
+.card-container {
+  max-width: 290;
+  position: "relative";
+}
+
+.card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 8px;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.article-custom{
+  width: 70%;
+  margin: auto;
+  color:"##6c6363" 
+}
